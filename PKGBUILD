@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
+# Maintainer: Truocolo <truocolo@aol.com>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
@@ -31,22 +35,23 @@ depends=(
   "${_py}-more-itertools"
 )
 makedepends=(
-  'python-build'
-  'python-installer'
-  'python-setuptools-scm'
-  'python-wheel'
+  "${_py}-build"
+  "${_py}-installer"
+  "${_py}-setuptools-scm"
+  "${_py}-wheel"
 )
 checkdepends=(
-  'python-pytest'
+  "${_py}-pytest"
 )
 conflicts=(
-  'python-jaraco'
+  "${_py}-jaraco"
 )
 replaces=(
-  'python-jaraco'
+  "${_py}-jaraco"
 )
+_pip="https://files.pythonhosted.org/packages/source"
 source=(
-  "https://files.pythonhosted.org/packages/source/j/jaraco.text/jaraco.text-$pkgver.tar.gz"
+  "${_pip}/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz"
 )
 sha512sums=(
   '75068006c96dae3b8d21228f2ae21820939c68b1fb7e5db35bd0c1126a20399eb4d99c6bea15e88076599956c4b41104558cd32d860d8f4fd4e96aeeb22711c9'
